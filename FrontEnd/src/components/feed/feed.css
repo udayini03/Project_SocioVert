@@ -1,0 +1,11 @@
+.feed{
+    flex:5.5;
+    max-width: 100%;
+}
+
+.feedWrapper{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
