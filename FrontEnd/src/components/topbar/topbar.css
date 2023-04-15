@@ -1,12 +1,14 @@
 .topNavBar{
     background: black;
     width:100%;
+    height:80px;
     margin:0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     z-index: 10;
+    border-bottom: 1px solid white;
 }
 
 .topbarIcons{
@@ -17,7 +19,7 @@
 .logoimg{
     height: 60px;
     width:277.5px;
-    transform: translateY(10px);
+    z-index: 0;
 }
 
 .profileSide{

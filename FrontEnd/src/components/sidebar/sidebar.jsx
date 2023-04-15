@@ -11,7 +11,7 @@ export default function sidebar() {
             <Link to={{ pathname: '/' }} className='link'>
               <Home className='sidebarIcon' />
               <span className='sidebarListItemtext'>
-                Feed </span>
+                Home </span>
             </Link>
           </li>
           <li className='sidebarListItem'>

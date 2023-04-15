@@ -1,6 +1,11 @@
 .profile{
     display: flex;
+    background: black;
+    border-top: 1px solid white;
+    width: 100%;
+    transform: translateY(65px);
 }
+
 .profileRight{
     flex: 9;
 }
@@ -22,10 +27,9 @@
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 30px;
     margin: auto;
-    top: 150px;
+    top: 190px;
     border: 3px solid white;
 }
 
