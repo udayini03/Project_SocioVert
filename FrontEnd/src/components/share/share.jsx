@@ -1,6 +1,8 @@
 import { useContext, useRef, useState } from "react"
 import "./share.css"
-import { PermMedia, Label, Room, EmojiEmotions, Cancel} from "@mui/icons-material"
+import {Cancel} from "@mui/icons-material";
+import AttachmentIcon from '@mui/icons-material/Attachment';
+import SendIcon from '@mui/icons-material/Send';
 import {AuthContext} from "../../context/AuthContext";
 import  axios  from "axios";
 
@@ -43,34 +45,21 @@ export default function Share() {
       <input placeholder={"What's on your mind " + user.username + " ?"}
       className="shareInput"
       ref = {desc}/>
+      <form className="shareBottom" onSubmit={submitHandler}>
+      <label htmlFor="file" className="shareOption">
+      <AttachmentIcon  className="shareIcon" sx={{ color: "white"}}/>
+      <span className="shareOptiontext"></span>
+      <input style={{display : "none"}} type="file" id="file" accept=".png,.jpeg,.jpg,.webp" onChange={(e)=> setFile(e.target.files[0])}/>
+      </label>
+      <button className="shareButton" type="submit"> <SendIcon fontSize="small" sx={{ color: "white"}}/> </button>
+      </form>
       </div>
-      <hr className="shareHr"/>
       {file && (
         <div className="shareImgContainer">
         <img className="shareImg" src={URL.createObjectURL(file)} alt=""/>
         <Cancel className="shareCancelImg" onClick={ ()=> setFile(null)} />
         </div>
       )}
-      <form className="shareBottom" onSubmit={submitHandler}>
-      <label htmlFor="file" className="shareOption">
-      <PermMedia htmlColor="tomato"  className="shareIcon"/>
-      <span className="shareOptiontext">Photo or Video</span>
-      <input style={{display : "none"}} type="file" id="file" accept=".png,.jpeg,.jpg,.webp" onChange={(e)=> setFile(e.target.files[0])}/>
-      </label>
-      <div className="shareOption">
-      <Label htmlColor="blue" className="shareIcon"/>
-      <span className="shareOptiontext">Tag</span>
-      </div>
-      <div className="shareOption">
-      <Room htmlColor="green"  className="shareIcon"/>
-      <span className="shareOptiontext">Location</span>
-      </div>
-      <div className="shareOption">
-      <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-      <span className="shareOptiontext">Feelings</span>
-      </div>
-      <button className="shareButton" type="submit"> Share </button>
-      </form>
       </div>
     </div> 
 )} 
