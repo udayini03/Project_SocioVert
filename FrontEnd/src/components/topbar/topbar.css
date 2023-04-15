@@ -8,11 +8,18 @@
     align-items: center;
     position: fixed;
     z-index: 10;
+    border-bottom: 1px solid white;
 }
 
 .topbarIcons{
     width:50px;
     margin:10px;
+}
+
+.logoimg{
+    height: 60px;
+    width:277.5px;
+    z-index: 0;
 }
 
 .profileSide{
@@ -25,12 +32,12 @@
     position: relative;
     color:white;
     width:50px;
+    transform: translateY(10px);
 }
 
 .topbarIconBadge{
     width: 20px;
     height: 15px;
-    /* background-color: red; */
     position: relative;
     border-radius: 50%;
     color: white;
@@ -38,8 +45,8 @@
 }
 
 .topbarImg{
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
     transform: translateX(-10px);
     border-radius: 50%;
     object-fit: cover;

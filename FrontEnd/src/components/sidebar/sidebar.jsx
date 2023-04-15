@@ -1,7 +1,5 @@
 import './sidebar.css';
-import { Chat, Group, RssFeed } from "@mui/icons-material";
-import { Users } from "../../DummyData";
-import CloseFriend from '../closeFriend/closefriend';
+import { Home, Chat, Group, AccountCircleRounded, Settings} from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 export default function sidebar() {
@@ -11,9 +9,9 @@ export default function sidebar() {
         <ul className='sidebarList'>
           <li className='sidebarListItem'>
             <Link to={{ pathname: '/' }} className='link'>
-              <RssFeed className='sidebarIcon' />
+              <Home className='sidebarIcon' />
               <span className='sidebarListItemtext'>
-                Feed </span>
+                Home </span>
             </Link>
           </li>
           <li className='sidebarListItem'>
@@ -28,14 +26,16 @@ export default function sidebar() {
             <span className='sidebarListItemtext'>
               Communities </span>
           </li>
-        </ul>
-        <button className='sidebarButton'>Show More
-        </button>
-        <hr className='sidebarHr' />
-        <ul className='sidebarFriendList'>
-          {Users.map((u) => (
-            <CloseFriend key={u.id} user={u} />
-          ))}
+          <li className='sidebarListItem'>
+            <AccountCircleRounded className='sidebarIcon' />
+            <span className='sidebarListItemtext'>
+              Profile </span>
+          </li>
+          <li className='sidebarListItem'>
+            <Settings className='sidebarIcon' />
+            <span className='sidebarListItemtext'>
+              Settings </span>
+          </li>
         </ul>
       </div>
     </div>
