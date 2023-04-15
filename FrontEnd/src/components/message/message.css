@@ -1,3 +1,7 @@
+.main{
+    background: black;
+}
+
 .message{
     display: flex;
     flex-direction: column;
