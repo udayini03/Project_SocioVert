@@ -1,8 +1,11 @@
 import './sidebar.css';
 import { Home, Chat, Group, AccountCircleRounded, Settings} from "@mui/icons-material";
+import { useContext } from 'react';
+import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
-export default function sidebar() {
+export default function Sidebar() {
+  const { user } = useContext(AuthContext)
   return (
     <div className='sidebar'>
       <div className='sidebarWrapper'>
@@ -26,11 +29,13 @@ export default function sidebar() {
             <span className='sidebarListItemtext'>
               Communities </span>
           </li>
+          <Link to={{ pathname: `/profile/${user.username}` }} className='link'>
           <li className='sidebarListItem'>
-            <AccountCircleRounded className='sidebarIcon' />
-            <span className='sidebarListItemtext'>
-              Profile </span>
+          <AccountCircleRounded className='sidebarIcon' />
+          <span className='sidebarListItemtext'>
+          Profile </span>
           </li>
+          </Link>
           <li className='sidebarListItem'>
             <Settings className='sidebarIcon' />
             <span className='sidebarListItemtext'>
