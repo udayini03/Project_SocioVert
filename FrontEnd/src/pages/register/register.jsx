@@ -3,6 +3,7 @@ import "./register.css"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import logo from './logo.png';
+import { Link } from "react-router-dom";
 
 
 export default function Register() {
@@ -56,7 +57,9 @@ export default function Register() {
               <input placeholder="Password" requied ref={password} minLength={6} type="password" className="loginInput" />
               <input placeholder="Confirm Password" required ref={passwordAgain} minLength={6} type="password" className="loginInput" />
               <button className="loginButton" type="submit">Sign Up</button>
+              <Link to= {{pathname: '/login'}} className="link">
               <button className="loginRegisterButton">Already have a Account?</button>
+              </Link>
             </form>
           </div>
         </div>

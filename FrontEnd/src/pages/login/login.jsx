@@ -3,6 +3,7 @@ import "./login.css";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import logo from './logo.png';
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const email = useRef();
@@ -36,7 +37,9 @@ export default function Login() {
             <input placeholder="Password" type="password" required minLength={6} className="loginInput" ref={password} />
             <button className="LoginBtn" type="submit" disabled={isFetching}>{isFetching ? "Loading" : "Log In"} </button>
             <span className="forgotPass">Forgot Password?</span>
+            <Link to= {{pathname: '/register'}} className="link">
             <button className="createBtn">{isFetching ? "Loading" : "Create account"}</button>
+            </Link>
           </form>
         </div>
       </div>
