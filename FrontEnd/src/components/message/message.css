@@ -1,11 +1,11 @@
 .main{
-    background: black;
+    background: rgb(0, 0, 0);
 }
 
 .message{
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    /* margin-top: 10px; */
     /* background: black; */
 }
 
@@ -24,14 +24,15 @@
 .messageText{
     padding: 10px;
     border-radius: 20px;
-    background-color: #1877f2;
-    color: white;
+    background-color: #2db0ca;
+    color: black;
     max-width: 300px;
 }
 
 .messageBottom{
     font-size:12px;
     margin-top: 10px;
+    color: white;
 }
 
 .message.own{
@@ -40,5 +41,5 @@
 
 .message.own .messageText{
     background-color: rgb(205, 204, 204);
-    color: black;
+    color: rgb(0, 0, 0);
 }

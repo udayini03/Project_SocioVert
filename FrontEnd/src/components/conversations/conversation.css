@@ -3,12 +3,25 @@
     align-items: center;
     padding: 10px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 90%;
+    color: white;
+    border-radius: 7px;
 }
 
 .conversation:hover{
     background-color: rgb(232, 232, 232);
+    color: black;
 }
+
+.conversation::after{
+    background-color: rgb(232, 232, 232);
+    color: black;
+}
+
+/* .conversation .conversationName:hover{
+    color: black;
+} */
 
 .conversationImg{
     width: 40px;
@@ -20,4 +33,5 @@
 
 .conversationName{
     font-weight: 500;
+    margin: 10px;
 }
