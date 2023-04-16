@@ -6,6 +6,7 @@ import Profile from "./pages/profile/profile";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Messenger from "./pages/chat/messenger";
+import Communities from "./pages/communities/Communities";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/profile/:username" element={<Profile />} />
         <Route path="/" element={user? <Home /> :<Register/>} />
         <Route path="/messenger" element={!user?< Navigate to ="/" /> :  <Messenger />} />
+        <Route path="/communities" element={!user?< Navigate to ="/" /> :  <Communities />} />
       </Routes>
     </Router>
   );
