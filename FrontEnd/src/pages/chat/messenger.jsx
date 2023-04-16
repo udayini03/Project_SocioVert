@@ -115,6 +115,7 @@ export default function Messenger() {
     
       <div className="chatMenu">
         <div className="chatMenuWrapper">
+          
           <input placeholder="   Search for Friends" className="chatMenuInput" />
           {conversations.map((c) => (
           <div onClick={()=> setCurrentChat((c))}>
