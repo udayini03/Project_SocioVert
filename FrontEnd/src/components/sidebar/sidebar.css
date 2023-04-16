@@ -1,11 +1,9 @@
 .sidebar {
     width: 310px;
-    height: calc(100vh - 50px);
+    height:48.5rem;
     overflow-y: scroll;
     position: sticky;
     top: 50px;
-    /* background: #000000; */
-    /* background: red; */
     transform: translateY(-60px);
     border-top: 1px solid white;
 }

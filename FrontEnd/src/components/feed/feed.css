@@ -4,8 +4,8 @@
 }
 
 .feedWrapper{
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    
+    background-color: cadetblue;
+    margin: 20px;
 }
