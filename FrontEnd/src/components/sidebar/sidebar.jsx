@@ -1,44 +1,48 @@
 import './sidebar.css';
-import { Chat, Group, RssFeed } from "@mui/icons-material";
-import {Users} from "../../DummyData";
-import CloseFriend from '../closeFriend/closefriend';
+import { Home, Chat, Group, AccountCircleRounded, Settings} from "@mui/icons-material";
+import { useContext } from 'react';
+import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 
- export default function sidebar() {
-   return (
-     <div className='sidebar'>
+export default function Sidebar() {
+  const { user } = useContext(AuthContext)
+  return (
+    <div className='sidebar'>
       <div className='sidebarWrapper'>
-      <ul className='sidebarList'>
-      <li className='sidebarListItem'>
-      <Link to={{ pathname: '/' }} className='link'>
-      <RssFeed className='sidebarIcon'/>
-      <span className='sidebarListItemtext'>
-      Feed </span>
-      </Link>
-      </li>
-      <li className='sidebarListItem'>
-      <Link to={{ pathname: '/messenger' } } className='link'>
-      <Chat className='sidebarIcon'/>
-      <span className='sidebarListItemtext'>
-      Chats </span>
-      </Link>
-      </li>
-      <li className='sidebarListItem'>
-      <Group className='sidebarIcon'/>
-      <span className='sidebarListItemtext'>
-      Communities </span>
-      </li>
-      </ul>
-      <button className='sidebarButton'>Show More
-      </button>
-      <hr className='sidebarHr'/>
-      <ul className='sidebarFriendList'>
-       {Users.map((u)=>(
-        <CloseFriend key={u.id} user={u} />
-       ))}
-      </ul>
+        <ul className='sidebarList'>
+          <li className='sidebarListItem'>
+            <Link to={{ pathname: '/' }} className='link'>
+              <Home className='sidebarIcon' />
+              <span className='sidebarListItemtext'>
+                Home </span>
+            </Link>
+          </li>
+          <li className='sidebarListItem'>
+            <Link to={{ pathname: '/messenger' }} className='link'>
+              <Chat className='sidebarIcon' />
+              <span className='sidebarListItemtext'>
+                Chats </span>
+            </Link>
+          </li>
+          <li className='sidebarListItem'>
+            <Group className='sidebarIcon' />
+            <span className='sidebarListItemtext'>
+              Communities </span>
+          </li>
+          <Link to={{ pathname: `/profile/${user.username}` }} className='link'>
+          <li className='sidebarListItem'>
+          <AccountCircleRounded className='sidebarIcon' />
+          <span className='sidebarListItemtext'>
+          Profile </span>
+          </li>
+          </Link>
+          <li className='sidebarListItem'>
+            <Settings className='sidebarIcon' />
+            <span className='sidebarListItemtext'>
+              Settings </span>
+          </li>
+        </ul>
       </div>
-     </div>
-   );
- }
- 
+    </div>
+  );
+}

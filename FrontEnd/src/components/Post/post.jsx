@@ -1,10 +1,11 @@
-import { MoreVert } from "@mui/icons-material"
+
 import "./post.css"
 import axios from "axios";
 import {useContext, useEffect, useState } from "react";
 import {format} from "timeago.js";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
 export default function Post({post}) {
@@ -46,7 +47,6 @@ export default function Post({post}) {
     <span className="postDate">{format(post.createdAt)}</span>
     </div>
     <div className="postTopRight">
-    <MoreVert />
     </div>
     </div>
     <div className="postCenter">
@@ -55,8 +55,8 @@ export default function Post({post}) {
     </div>
     <div className="postBottom">
     <div className="postBottomLeft">
-    <img className="likeIcon" src={`${PF}like.png`}  onClick={likeHandler} alt=""/>
-    <span className="postLikeCounter">{like} likes</span>
+    <FavoriteBorderIcon sx={{ color: "white" }} fontsize="medium" onClick={likeHandler} alt=""/>
+    <span className="postLikeCounter"> {like} likes</span>
     </div>
     <div className="postBottomRight">
     <span className="postCommentText">{post.comment} comments</span>
