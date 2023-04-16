@@ -31,6 +31,7 @@ border-radius: 5px;
     width: 80%;
     height: 30%;
     background: #272729;
+    color: white;
 }
 
 .shareInput:focus{
