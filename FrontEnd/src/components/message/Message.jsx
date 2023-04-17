@@ -1,6 +1,6 @@
 import "./message.css"
 import { format } from "timeago.js";
-import Sidebar from "../sidebar/sidebar";
+// import Sidebar from "../sidebar/sidebar";
 export default function Message({ message, own }) {
   return (
     <>
