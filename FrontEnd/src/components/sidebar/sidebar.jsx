@@ -1,11 +1,18 @@
 import './sidebar.css';
 import { Home, Chat, Group, AccountCircleRounded, Settings} from "@mui/icons-material";
+import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 export default function Sidebar() {
   const { user } = useContext(AuthContext)
+
+    function handleLogout() {
+      localStorage.removeItem('user');
+      window.location.reload();
+    } 
+
   return (
     <div className='sidebar'>
       <div className='sidebarWrapper'>
@@ -24,11 +31,13 @@ export default function Sidebar() {
                 Chats </span>
             </Link>
           </li>
+          <Link to={{ pathname: '/communities' }} className='link'>
           <li className='sidebarListItem'>
-            <Group className='sidebarIcon' />
-            <span className='sidebarListItemtext'>
-              Communities </span>
+          <Group className='sidebarIcon' />
+          <span className='sidebarListItemtext'>
+          Communities </span>
           </li>
+          </Link>
           <Link to={{ pathname: `/profile/${user.username}` }} className='link'>
           <li className='sidebarListItem'>
           <AccountCircleRounded className='sidebarIcon' />
@@ -41,8 +50,15 @@ export default function Sidebar() {
             <span className='sidebarListItemtext'>
               Settings </span>
           </li>
+          <li className='sidebarListItem'>
+          <LogoutIcon className='sidebarIcon' />
+          <button onClick={handleLogout} className='sidebarListItemtext'>
+          Logout </button>
+          </li>
         </ul>
       </div>
     </div>
   );
-}
+} 
+
+
