@@ -72,7 +72,7 @@ export default function Messenger() {
       }
     };
     getMessages();
-  }, [currentChat]);
+ },[currentChat._id]);
 
 
 
