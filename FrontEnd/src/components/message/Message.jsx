@@ -4,12 +4,14 @@ import { format } from "timeago.js";
 export default function Message({ message, own }) {
   return (
     <>
-        <div className={own ? "message own" : "message "}>
+    <div className="background">
+      <div className={own ? "message own" : "message "}>
           <div className="messageTop">
-            <p className="messageText">{message.text}</p>
+            <p className={own ? "message own messageText" : "message messageText"}>{message.text}</p>
           </div>
-          <div className="messageBottom">{format(message.createdAt)}</div>
-        </div>
+        <div className="messageBottom">{format(message.createdAt)}</div>
+      </div>
+    </div>
     </>
   )
 }

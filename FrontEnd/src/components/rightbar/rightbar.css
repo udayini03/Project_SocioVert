@@ -37,9 +37,9 @@
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 10px;
-    border:none;
+    border: none;
     background: inherit;
-    color:white;
+    color: white;
     cursor: pointer;
 }
 
@@ -76,9 +76,9 @@
 .friendsHeading {
     margin-bottom: 30px;
     margin-top: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 40px;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .rightbarFollowings {
@@ -86,13 +86,15 @@
     flex-direction: column;
     align-items: center;
     border-radius: 10px;
-    background: #000000;
+    background: rgba(28, 27, 27);
+    /* box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(3px); */
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(50px);
-    border-radius: 20px;
     position: absolute;
-    right:500px;
-    top:-300px;
+    right: 500px;
+    top: -300px;
     height: 500px;
     width: 450px;
     padding-top: 20px;
@@ -109,13 +111,14 @@
     margin-bottom: 8px;
     cursor: pointer;
     position: relative;
-    background: #1A1A1B;
+    background: rgb(14, 176, 171);
+    background: linear-gradient(164deg, rgba(14, 176, 171, 1) 23%, rgba(21, 174, 130, 1) 52%, rgba(22, 174, 121, 1) 90%, rgba(27, 173, 93, 1) 100%, rgba(43, 170, 51, 1) 100%);
     border-radius: 10px;
     border: 1px solid rgba(93, 92, 92, 0.5);
 }
 
 .rightbarFollowingName {
-    color: white;
+    color: black;
     font-size: 20px;
     margin-right: 13px;
 }
@@ -141,17 +144,18 @@
     font-size: 22px;
     font-weight: 400;
     cursor: pointer;
-    height:45px;
-    width:150px;
+    height: 45px;
+    width: 150px;
     position: absolute;
     justify-content: center;
-    top:470px;
-    right:400px;
+    top: 470px;
+    right: 400px;
 }
-.rightbarMessageButton{
+
+.rightbarMessageButton {
     border: none;
-    height:45px;
-    width:180px;
+    height: 45px;
+    width: 180px;
     background-color: #1872f2;
     color: white;
     border-radius: 5px;
@@ -163,10 +167,10 @@
     font-weight: 400;
     cursor: pointer;
     position: absolute;
-    top:470px;
-    right:200px;
+    top: 470px;
+    right: 200px;
 }
+
 .rightbarFollowButton:focus {
     outline: none;
 }
-

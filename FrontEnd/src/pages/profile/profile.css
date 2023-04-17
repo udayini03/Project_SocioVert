@@ -1,30 +1,31 @@
-.profile{
+.profile {
     display: flex;
-    background: black;
-    border-top: 1px solid white;
+    background: rgb(14, 176, 171);
+    background: linear-gradient(164deg, rgba(14, 176, 171, 1) 23%, rgba(27, 173, 93, 1) 61%, rgb(0, 246, 12) 100%);
     width: 100%;
-    height: 100%;
-    transform: translateY(65px);
+    height: 800px;
+    overflow: scroll;
 }
 
-.profileRight{
-    flex: 9;
+.profileRight {
+    flex: 1;
+    width:70%;
 }
 
-.profileCover{
+.profileCover {
     height: 320px;
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.profileCoverImg{
+.profileCoverImg {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
 
-.profileUserImg{
+.profileUserImg {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -33,37 +34,36 @@
     left: 30px;
     margin: auto;
     top: 230px;
-    border: 3px solid white;
+    border: 3px solid black;
 }
 
-.profileInfo{
+.profileInfo {
     display: flex;
     height: 200px;
-    width:80rem;
-    align-items:center;
-    justify-content:space-evenly;
+    width: 80rem;
+    align-items: center;
+    justify-content: space-evenly;
     padding-bottom: 30px;
 }
 
-.profileInfoName{
+.profileInfoName {
     font-size: 35px;
     font-weight: 500;
-    color:white;
+    color: black;
     translate: -55px 10px;
 }
 
-.profileInfoDesc{
+.profileInfoDesc {
     font-weight: 500;
     font-size: 20px;
     color: white;
     transform: translateX(-50px);
-    height:180px;
-    width:300px;
+    height: 180px;
+    width: 300px;
 }
 
-.profileRightBottom{
+.profileRightBottom {
     display: flex;
-    border-top: 1px solid white;
     z-index: 0;
-    /* background: black; */
+    background: rgb(43, 40, 40);
 }

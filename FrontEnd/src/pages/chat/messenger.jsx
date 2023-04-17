@@ -6,9 +6,10 @@ import ChatOnline from "../../components/chatOnline/ChatOnline";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import {io} from "socket.io-client";
+import { io } from "socket.io-client";
 import Sidebar from "../../components/sidebar/sidebar";
-
+import { Link } from "react-router-dom";
+import logo from './logo.png';
 
 export default function Messenger() {
 
@@ -108,51 +109,63 @@ export default function Messenger() {
 
   return (
     <>
-    <Topbar/>
-    <div className="messenger">
-      <div className="Sidebar">
-        <Sidebar/>
-      </div>
-    
-      <div className="chatMenu">
-        <div className="chatMenuWrapper">
-          <input placeholder="   Search for Friends" className="chatMenuInput" />
-          {conversations.map((c) => (
-          <div onClick={()=> setCurrentChat((c))}>
-            <Conversation conversation={c} currentUser={user} />
-          </div>
-          ))}
+      <div className="messenger">
+        <div className="Sidebar">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={logo} alt="logo" class="chatlogoimg"></img>
+          </Link>
+          <Sidebar />
         </div>
-      </div>
-      <div className="line"></div>
-      <div className="chatBox">
-        <div className="chatBoxWrapper">
-          {
-          currentChat ? 
-          <>
-          <div className="chatBoxTop">
-            {messages.map((m)=>(
-            <div ref={scrollRef}>
-              <Message message = {m} own = {m.sender === user._id}/>
+
+        <div className="chat">
+          <div className="chatMenu">
+          <div className = "chatPageHeading">
+            <div className = "chatHeading">Chats</div>
+            <div className="vLine"></div>
+            <div className = "communitiesHeading">Communities</div>
+          </div>
+            <div className="chatMenuWrapper">
+              <input placeholder="   Search for Friends" className="chatMenuInput" />
+              {conversations.map((c) => (
+                <div onClick={() => setCurrentChat((c))}>
+                  <Conversation conversation={c} currentUser={user} />
+                </div>
+              ))}
             </div>
-            ))}
-  
           </div>
-          <div className="chatBoxBottom">
-            <textarea className="chatMessageInput" placeholder="  Type your Message" onChange={(e)=> setNewMessage(e.target.value) } value={newMessage} ></textarea>
-            <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
-          </div> 
-          </> : <span className = "noConversationText" >Open a Conversation to start a chat</span>  }
-        </div>
-      </div>
-      <div className="chatOnline">
-        {/* <div className="chatOnlineWrapper">
+
+          <div className="chatBox">
+            <div className="chatBoxWrapper">
+              {
+                currentChat ?
+                  <>
+                  <div className="activeChatName">
+                    
+                  </div>
+                    <div className="chatBoxTop">
+                      {messages.map((m) => (
+                        <div ref={scrollRef}>
+                          <Message message={m} own={m.sender === user._id} />
+                        </div>
+                      ))}
+
+                    </div>
+                    <div className="chatBoxBottom">
+                      <textarea className="chatMessageInput" placeholder="  Type your Message" onChange={(e) => setNewMessage(e.target.value)} value={newMessage} ></textarea>
+                      <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
+                    </div>
+                  </> : <div className="noConversationText" >Open a Conversation to start a chat</div>}
+            </div>
+          </div>
+          <div className="chatOnline">
+            {/* <div className="chatOnlineWrapper">
           <ChatOnline onlineUsers={onlineUsers} 
           currentId={user._id} 
           setCurrentChat={setCurrentChat}/>
         </div> */}
+        </div>
       </div>
-    </div>
+      </div>
     </>
   )
 }
