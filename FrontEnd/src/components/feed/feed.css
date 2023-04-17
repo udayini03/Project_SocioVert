@@ -6,6 +6,11 @@
 .feedWrapper{
     display: flex;
     flex-direction: column;
-    background-color: cadetblue;
     margin: 20px;
+}
+
+.shareBox{
+    position: relative;
+    right: -190px;
+    width: 80%;
 }

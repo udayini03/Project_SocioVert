@@ -32,7 +32,7 @@
     position: absolute;
     left: 30px;
     margin: auto;
-    top: 190px;
+    top: 230px;
     border: 3px solid white;
 }
 
@@ -42,14 +42,14 @@
     width:80rem;
     align-items:center;
     justify-content:space-evenly;
-    /* background: blue; */
+    padding-bottom: 30px;
 }
 
 .profileInfoName{
     font-size: 35px;
     font-weight: 500;
     color:white;
-    translate: -50px -30px;
+    translate: -55px 10px;
 }
 
 .profileInfoDesc{
@@ -65,5 +65,5 @@
     display: flex;
     border-top: 1px solid white;
     z-index: 0;
-    background: black;
+    /* background: black; */
 }

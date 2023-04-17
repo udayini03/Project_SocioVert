@@ -6,7 +6,9 @@ import ChatOnline from "../../components/chatOnline/ChatOnline";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
-import { io } from "socket.io-client";
+import {io} from "socket.io-client";
+import Sidebar from "../../components/sidebar/sidebar";
+
 
 export default function Messenger() {
 
@@ -106,46 +108,51 @@ export default function Messenger() {
 
   return (
     <>
-      <Topbar />
-      <div className="messenger">
-        <div className="chatMenu">
-          <div className="chatMenuWrapper">
-            <input placeholder="Search for Friends" className="chatMenuInput" />
-            {conversations.map((c) => (
-              <div onClick={() => setCurrentChat((c))}>
-                <Conversation conversation={c} currentUser={user} />
-              </div>
-            ))}
+    <Topbar/>
+    <div className="messenger">
+      <div className="Sidebar">
+        <Sidebar/>
+      </div>
+    
+      <div className="chatMenu">
+        <div className="chatMenuWrapper">
+          <input placeholder="   Search for Friends" className="chatMenuInput" />
+          {conversations.map((c) => (
+          <div onClick={()=> setCurrentChat((c))}>
+            <Conversation conversation={c} currentUser={user} />
           </div>
-        </div>
-        <div className="chatBox">
-          <div className="chatBoxWrapper">
-            {
-              currentChat ?
-                <>
-                  <div className="chatBoxTop">
-                    {messages.map((m) => (
-                      <div ref={scrollRef}>
-                        <Message message={m} own={m.sender === user._id} />
-                      </div>
-                    ))}
-
-                  </div>
-                  <div className="chatBoxBottom">
-                    <textarea className="chatMessageInput" placeholder="Type your Message" onChange={(e) => setNewMessage(e.target.value)} value={newMessage} ></textarea>
-                    <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
-                  </div>
-                </> : <span className="noConversationText" >Open a Conversation to start a chat</span>}
-          </div>
-        </div>
-        <div className="chatOnline">
-          <div className="chatOnlineWrapper">
-            <ChatOnline onlineUsers={onlineUsers}
-              currentId={user._id}
-              setCurrentChat={setCurrentChat} />
-          </div>
+          ))}
         </div>
       </div>
+      <div className="line"></div>
+      <div className="chatBox">
+        <div className="chatBoxWrapper">
+          {
+          currentChat ? 
+          <>
+          <div className="chatBoxTop">
+            {messages.map((m)=>(
+            <div ref={scrollRef}>
+              <Message message = {m} own = {m.sender === user._id}/>
+            </div>
+            ))}
+  
+          </div>
+          <div className="chatBoxBottom">
+            <textarea className="chatMessageInput" placeholder="  Type your Message" onChange={(e)=> setNewMessage(e.target.value) } value={newMessage} ></textarea>
+            <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
+          </div> 
+          </> : <span className = "noConversationText" >Open a Conversation to start a chat</span>  }
+        </div>
+      </div>
+      <div className="chatOnline">
+        {/* <div className="chatOnlineWrapper">
+          <ChatOnline onlineUsers={onlineUsers} 
+          currentId={user._id} 
+          setCurrentChat={setCurrentChat}/>
+        </div> */}
+      </div>
+    </div>
     </>
   )
 }
