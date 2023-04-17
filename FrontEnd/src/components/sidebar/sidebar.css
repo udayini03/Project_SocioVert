@@ -1,24 +1,20 @@
 .sidebar {
-    width: 310px;
-    height:48.5rem;
+    width: 280px;
+    height: 100%;
     overflow-y: scroll;
-    position: sticky;
-    top: 50px;
-    transform: translateY(-60px);
-    border-top: 1px solid white;
+    position: fixed;
 }
 
 .sidebarWrapper {
-    transform: translateY(50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
+    height: 450px;
 }
 
 ::-webkit-scrollbar {
     width: 0.8px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: white;
 }
 
 .sidebarList {
@@ -32,8 +28,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    color:white;
-    font-size:25px;
+    color: white;
+    font-size: 25px;
 }
 
 .sidebarIcon {
@@ -42,5 +38,13 @@
 
 .link {
     text-decoration: none;
-    color:white;
+    color: white;
+}
+
+.logoutBtn {
+    border: none;
+    background: inherit;
+    color: white;
+    font-size: 25px;
+    transform: translateX(-5px);
 }
