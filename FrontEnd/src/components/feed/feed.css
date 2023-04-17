@@ -4,8 +4,13 @@
 }
 
 .feedWrapper{
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    margin: 20px;
+}
+
+.shareBox{
+    position: relative;
+    right: -190px;
+    width: 80%;
 }

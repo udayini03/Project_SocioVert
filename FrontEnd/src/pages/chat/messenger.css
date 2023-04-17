@@ -1,9 +1,9 @@
 .messenger{
-    height: 88vh;
+    height: 92%;
     width: 100%;
     display: flex;
     background-color: black;
-    transform: translateY(13.5%);
+    transform: translateY(70px);
     position: fixed;
     
 }
