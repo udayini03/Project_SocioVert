@@ -71,7 +71,7 @@ export default function Messenger() {
       }
     };
     getMessages();
- },[currentChat._id]);
+ },[currentChat]);
 
 
 

@@ -35,7 +35,7 @@ export default function Profile() {
 
             <div className='profileInfo'>
               <div><h4 className='profileInfoName'>{user.username}</h4></div>
-              <div className='profileInfoDesc'>{user.desc}IIITian</div>
+              <div className='profileInfoDesc'>{user.desc}</div>
               <div class = "friendSide"><Rightbar user={user} /></div>
             </div>
           </div>
