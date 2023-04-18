@@ -1,17 +1,17 @@
 import './sidebar.css';
-import { Home, Chat, Group, AccountCircleRounded, Settings} from "@mui/icons-material";
+import { Home, Chat, Group, AccountCircleRounded, Settings } from "@mui/icons-material";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthContext";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sidebar() {
   const { user } = useContext(AuthContext)
 
-    function handleLogout() {
-      localStorage.removeItem('user');
-      window.location.reload();
-    } 
+  function handleLogout() {
+    localStorage.removeItem('user');
+    window.location.reload();
+  }
 
   return (
     <div className='sidebar'>
@@ -32,18 +32,18 @@ export default function Sidebar() {
             </Link>
           </li>
           <Link to={{ pathname: '/communities' }} className='link'>
-          <li className='sidebarListItem'>
-          <Group className='sidebarIcon' />
-          <span className='sidebarListItemtext'>
-          Communities </span>
-          </li>
+            <li className='sidebarListItem'>
+              <Group className='sidebarIcon' />
+              <span className='sidebarListItemtext'>
+                Communities </span>
+            </li>
           </Link>
           <Link to={{ pathname: `/profile/${user.username}` }} className='link'>
-          <li className='sidebarListItem'>
-          <AccountCircleRounded className='sidebarIcon' />
-          <span className='sidebarListItemtext'>
-          Profile </span>
-          </li>
+            <li className='sidebarListItem'>
+              <AccountCircleRounded className='sidebarIcon' />
+              <span className='sidebarListItemtext'>
+                Profile </span>
+            </li>
           </Link>
           <li className='sidebarListItem'>
             <Settings className='sidebarIcon' />
@@ -51,14 +51,14 @@ export default function Sidebar() {
               Settings </span>
           </li>
           <li className='sidebarListItem'>
-          <LogoutIcon className='sidebarIcon' />
-          <button onClick={handleLogout} className='sidebarListItemtext'>
-          Logout </button>
+            <LogoutIcon className='sidebarIcon' />
+            <button onClick={handleLogout} className='logoutBtn'>
+              Logout </button>
           </li>
         </ul>
       </div>
     </div>
   );
-} 
+}
 
 
