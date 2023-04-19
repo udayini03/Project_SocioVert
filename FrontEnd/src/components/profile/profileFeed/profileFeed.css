@@ -1,0 +1,12 @@
+.feedWrapper{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.shareBox{
+    position: relative;
+    right: -190px;
+    width: 80%;
+}

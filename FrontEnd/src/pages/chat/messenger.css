@@ -96,11 +96,31 @@
     width: 100%;
     background:#00070e;
     transform: translateX(-3px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
 
 }
 
 .chatBoxWrapper:focus {
     outline: none;
+}
+
+.activeChatImg{
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    background: white;
+    margin:0 10px;
+}
+
+.activeChatUserName{
+    font-family: 'Brawler';
+    font-style: normal;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
 }
 
 .chatBoxTop {

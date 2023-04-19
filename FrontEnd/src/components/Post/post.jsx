@@ -1,4 +1,3 @@
-
 import "./post.css"
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";

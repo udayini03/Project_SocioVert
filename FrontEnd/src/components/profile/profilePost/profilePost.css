@@ -1,0 +1,126 @@
+.profilePost {
+  width:90%;
+  min-width: 70%;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  margin: 15px 0;
+  display: flex;
+  align-self: center;
+}
+
+.profileMainBox{
+  max-height: 500px;
+  margin:10px 0;
+  width:90%;
+  display: flex;
+  justify-content: end;
+}
+
+.profilePostWrapper {
+  width: 100%;
+  max-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #1A1A1B;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.profilePostTop {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePostTopLeft {
+  display: flex;
+  align-items: center;
+  translate:10px 20px;
+  margin-bottom:20px;
+}
+
+.profilePostProfileImg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.profilePostUsername {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 10px;
+  color: #D7DADC;
+}
+
+.profilePostDate {
+  font-size: 12px;
+  position: relative;
+  color: #D7DADC;
+  margin:12px;
+}
+
+.profilePostCenter {
+  max-height: 75%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin:10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePostText {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #D7DADC;
+  margin:15px 20px;
+}
+
+.profilepostImg {
+  width: 100%;
+  height: 400px;
+}
+
+.profilePostBottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  width:35%;
+  margin:30px 0px 0px 10px;
+}
+
+.profiLelikeIcon {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  
+}
+.profilePostBottomLeft{
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.profilePostLikeCounter {
+  font-size: 30px;
+  color:aqua
+
+}
+
+.profilePostCommentText {
+  cursor: pointer;
+  font-size: 30px;
+  color:aqua
+}
+
+.profileuploadDeatils{
+  max-height: 85%;
+}
+
