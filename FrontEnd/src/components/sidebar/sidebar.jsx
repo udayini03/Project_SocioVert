@@ -20,39 +20,39 @@ export default function Sidebar() {
           <li className='sidebarListItem'>
             <Link to={{ pathname: '/' }} className='link'>
               <Home className='sidebarIcon' />
-              <span className='sidebarListItemtext'>
+              <span className='sidebarListItemtext hover-sidebarItems'>
                 Home </span>
             </Link>
           </li>
           <li className='sidebarListItem'>
             <Link to={{ pathname: '/messenger' }} className='link'>
               <Chat className='sidebarIcon' />
-              <span className='sidebarListItemtext'>
+              <span className='sidebarListItemtext hover-sidebarItems'>
                 Chats </span>
             </Link>
           </li>
           <Link to={{ pathname: '/communities' }} className='link'>
             <li className='sidebarListItem'>
               <Group className='sidebarIcon' />
-              <span className='sidebarListItemtext'>
+              <span className='sidebarListItemtext hover-sidebarItems'>
                 Communities </span>
             </li>
           </Link>
           <Link to={{ pathname: `/profile/${user.username}` }} className='link'>
             <li className='sidebarListItem'>
               <AccountCircleRounded className='sidebarIcon' />
-              <span className='sidebarListItemtext'>
+              <span className='sidebarListItemtext hover-sidebarItems'>
                 Profile </span>
             </li>
           </Link>
           <li className='sidebarListItem'>
             <Settings className='sidebarIcon' />
-            <span className='sidebarListItemtext'>
+            <span className='sidebarListItemtext hover-sidebarItems'>
               Settings </span>
           </li>
           <li className='sidebarListItem'>
             <LogoutIcon className='sidebarIcon' />
-            <button onClick={handleLogout} className='logoutBtn'>
+            <button onClick={handleLogout} className='logoutBtn hover-sidebarItems'>
               Logout </button>
           </li>
         </ul>

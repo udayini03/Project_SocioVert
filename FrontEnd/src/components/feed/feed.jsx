@@ -24,7 +24,7 @@ export default function Feed({username}) {
     fetchPosts(); 
   },[username, user._id, id]);
   return (
-    <div className="feed">
+    
       <div className="feedWrapper">
     {(!username || username === user.username) && <div className="shareBox"><Share/></div>}
    {posts.map(p=>(
@@ -32,6 +32,6 @@ export default function Feed({username}) {
 ))}
     
       </div>
-    </div>
+    
   )
 }
