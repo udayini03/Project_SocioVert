@@ -9,13 +9,14 @@
     width: 90%;
     color: black;
     border-radius: 7px;
-    background: #DEDEDE;
+    background: #000000;
+    border: white;
 }
 
 .conversation:hover {
     /* background-color: rgb(30, 28, 28); */
-    box-shadow: 2px 6px 10px rgb(67, 66, 66);
-    text-shadow:  0px 2px 1px rgb(37, 101, 45);
+    box-shadow: 2px 6px 10px rgb(70, 70, 70);
+    text-shadow:  0px 2px 1px rgb(71, 89, 73);
 }
 
 .conversation::after {
@@ -41,4 +42,5 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
+    color: white;
 }

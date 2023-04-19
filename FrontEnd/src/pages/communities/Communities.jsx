@@ -1,7 +1,7 @@
 import Sidebar from "../../components/sidebar/sidebar";
 import CommunityRightbar from "../../components/communityRightBar/CommunityRightBar";
-import Feed from "../../components/feed/feed";
 import "./communities.css";
+import CommunityFeed from "../../components/communityFeed/CommunityFeed";
 
 export default function Communities() {
     return (
@@ -12,7 +12,7 @@ export default function Communities() {
                     <div ><img className="coverImage" src="https://www.fbcoverlover.com/maker/covers-images/download/friends-2-Facebook-Covers-FBcoverlover-facebook-cover.jpg"></img></div>
                     <div className="lowerContainer">
                         <div className="communityfeed">
-                            <Feed />
+                            <CommunityFeed />
                         </div>
                         <CommunityRightbar />
                     </div>
