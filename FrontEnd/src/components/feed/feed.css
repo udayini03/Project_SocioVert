@@ -1,12 +1,8 @@
-.feed{
-    flex:5.5;
-    max-width: 100%;
-}
-
 .feedWrapper{
+    width:100%;
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    overflow: scroll;
 }
 
 .shareBox{

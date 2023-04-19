@@ -1,0 +1,52 @@
+.homesidebar {
+    width: 280px;
+    height: auto;
+    overflow-y: scroll;
+}
+
+.homesidebarWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(16, 208, 176, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin:10px;
+}
+
+.homesidebarList {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transform: translateX(20px);
+}
+
+.homesidebarListItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 25px;
+}
+
+.homesidebarIcon {
+    margin-right: 15px;
+}
+
+.homelink {
+    text-decoration: none;
+    color: white;
+}
+
+.homelogoutBtn {
+    border: none;
+    background: inherit;
+    color: white;
+    font-size: 25px;
+    transform: translateX(-5px);
+}

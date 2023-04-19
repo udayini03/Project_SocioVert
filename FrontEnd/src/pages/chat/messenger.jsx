@@ -140,7 +140,8 @@ export default function Messenger() {
                 currentChat ?
                   <>
                   <div className="activeChatName">
-                    
+                    <div className="activeChatImg"></div>
+                    <div className="activeChatUserName">Santhosh</div>
                   </div>
                     <div className="chatBoxTop">
                       {messages.map((m) => (
