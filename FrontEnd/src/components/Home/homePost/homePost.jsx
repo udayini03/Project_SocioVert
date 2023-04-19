@@ -36,39 +36,39 @@ export default function Post({ post }) {
     setisLiked(!isliked)
   }
   return (
-    <div className="mainBox">
-      <div className="post">
-        <div className="postWrapper">
+    <div className="homemainBox">
+      <div className="homepost">
+        <div className="homepostWrapper">
           <div className="postTop">
-            <div className="postTopLeft">
+            <div className="homepostTopLeft">
               <Link to={`/profile/${user.username}`}>
-                <img className="postProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "Persons/noAvatar.png"} alt="" />
+                <img className="homepostProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "Persons/noAvatar.png"} alt="" />
               </Link>
-              <span className="postUsername">{user.username}</span>
+              <span className="homepostUsername">{user.username}</span>
             </div>
             <div>
-              <span className="postDate">{format(post.createdAt)}</span>
+              <span className="homepostDate">{format(post.createdAt)}</span>
             </div>
           </div>
 
-          <div className="uploadDeatils">
-            <div className="postCenter">
-              <div className="postText">{post?.desc}</div>
-              <img className="postImg" src={PF + post.img} alt=""></img>
+          <div className="homeuploadDeatils">
+            <div className="homepostCenter">
+              <div className="homepostText">{post?.desc}</div>
+              <img className="homepostImg" src={PF + post.img} alt=""></img>
             </div>
-            <div className="postBottom">
-              <div className="postBottomLeft">
-                <div className = "likeIcon">
+            <div className="homepostBottom">
+              <div className="homepostBottomLeft">
+                <div className = "homelikeIcon">
                   {isliked ? (
                     <FavoriteIcon sx={{ color: "red" }} fontSize="medium" onClick={likeHandler} alt="" />
                   ) : (
                     <FavoriteBorderIcon sx={{ color: "white" }} fontSize="medium" onClick={likeHandler} alt="" />
                   )}
                 </div>
-                <span className="postLikeCounter"> {like} likes</span>
+                <span className="homepostLikeCounter"> {like} likes</span>
               </div>
-              <div className="postBottomRight">
-                <span className="postCommentText">{post.comment}Comments</span>
+              <div className="homepostBottomRight">
+                <span className="homepostCommentText">{post.comment}Comments</span>
               </div>
             </div>
           </div>

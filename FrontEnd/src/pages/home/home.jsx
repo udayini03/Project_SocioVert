@@ -8,12 +8,12 @@ export default function Home() {
         <>
             <Topbar />
             <div className="homeSecContainer">
-            
-            <div className="stage">
-                <figure class = "ball"></figure>
-            </div>
-                <div className="homeSideBar"><HomeSidebar/></div>
-                <div class = "homeFeed"><HomeFeed /></div>
+
+                <div className="stage">
+                    <figure class="ball"></figure>
+                </div>
+                <div className="homeSideBar"><HomeSidebar /></div>
+                <div class="homeFeed"><HomeFeed /></div>
             </div>
 
         </>

@@ -25,8 +25,8 @@ export default function Feed({username}) {
   },[username, user._id, id]);
   return (
     
-      <div className="feedWrapper">
-    {(!username || username === user.username) && <div className="shareBox"><Share/></div>}
+      <div className="homefeedWrapper">
+    {(!username || username === user.username) && <div className="homeshareBox"><Share/></div>}
    {posts.map(p=>(
        <Post key = {p._id} post={p}/>
 ))}
