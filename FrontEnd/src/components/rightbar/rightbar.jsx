@@ -17,7 +17,6 @@ export default function Rightbar({ user }) {
   const [followed, setFollowed] = useState(
     currentUser.followings.includes(user?.id)
   );
-  const [followers, setFollowings] = useState([]);
   const [posts, setPosts] = useState([]);
 
   // const [numFriends, setNumFriends] = useState(0);

@@ -4,14 +4,37 @@ const User = require('../models/User');
 const Community = require('../models/Community');
 
 // Create a new community
+// POST /api/communities
+// Create a new community
 router.post('/communities', async (req, res) => {
   try {
-    const community = new Community(req.body);
+    const { name, description, category } = req.body;
+
+    // Validate input
+    if (!name || !description || !category) {
+      return res.status(400).json({ error: 'Please provide name, description, and category' });
+    }
+
+    // Check if community with same name already exists
+    const existingCommunity = await Community.findOne({ name });
+    if (existingCommunity) {
+      return res.status(400).json({ error: 'Community with this name already exists' });
+    }
+
+    // Create a new community
+    const community = new Community({
+      name,
+      description,
+      category,
+      creator: req.user._id // Assumes user is authenticated and their ID is stored in req.user
+    });
+
     await community.save();
-    res.status(201).send(community);
+
+    res.status(201).json({ community });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Server error');
+    res.status(500).json({ error: 'Server error' });
   }
 });
 

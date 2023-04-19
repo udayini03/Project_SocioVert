@@ -1,31 +1,37 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
-  username: {
+const communitySchema = new mongoose.Schema({
+  name: {
     type: String,
     required: true,
-    unique: true
+    trim: true
   },
-  email: {
+  description: {
     type: String,
     required: true,
-    unique: true
+    trim: true
   },
-  password: {
-    type: String,
+  tags: {
+    type: [String],
     required: true,
+    default: []
   },
-  bio: {
+  members: {
+    type: [String],
+    required: true,
+    default: []
+  },
+  admins: {
+    type: [String],
+    required: true,
+    default: []
+  },
+  owner: {
     type: String,
-  },
-  profilePicture: {
-    type: String,
-    default: 'https://example.com/default-profile-pic.png'
-  },
-  communities: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Community'
-  }]
+    required: true
+  }
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', UserSchema);
+const Community = mongoose.model('Community', communitySchema);
+
+module.exports = Community;
