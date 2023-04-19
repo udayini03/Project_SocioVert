@@ -3,9 +3,11 @@ import { Users } from "../../DummyData";
 import Online from "../Online/online"
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import { Add, Remove } from "@mui/icons-material";
+// import { useNavigate } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 
 export default function Rightbar({ user }) {
@@ -15,6 +17,18 @@ export default function Rightbar({ user }) {
   const [followed, setFollowed] = useState(
     currentUser.followings.includes(user?.id)
   );
+  const [followers, setFollowings] = useState([]);
+  const [posts, setPosts] = useState([]);
+
+  // const [numFriends, setNumFriends] = useState(0);
+
+  // const displayFriends = async () => {
+  //   try {
+  //     const res = await axios.get('/friends');
+  //     setNumFriends(res.data.length);
+  //   } catch (err) {
+  //     console.log(err);
+  //   } }
 
 
 
@@ -23,6 +37,8 @@ export default function Rightbar({ user }) {
     const getFriends = async () => {
       try {
         const friendList = await axios.get("/users/friends/" + user._id);
+
+        console.log(friendList);
         setFriends(friendList.data);
       } catch (err) {
         console.log(err)
@@ -47,9 +63,21 @@ export default function Rightbar({ user }) {
     }
   };
 
-  const message = () => {
-    window.location.href = "https://example.com";
+  const Message = async ({ history }) => {
+    try {
+      const res = await axios.post('/conversations', {
+        senderId: currentUser._id,
+        receiverId: user._id // the id of the user that the current page represents
+      });
+      const newConversation = res.data;
+      // navigate to the chat page with the new conversation id
+      history.push(`/chat/${newConversation._id}`);
+    } catch (err) {
+      console.log(err);
+    }
   };
+  
+  
 
   const HomeRightbar = () => {
     return (
@@ -82,19 +110,19 @@ export default function Rightbar({ user }) {
       <>
         {user.username !== currentUser.username && (
         <>
-          <button className="rightbarFollowButton" onClick={handleClick}>
-            {followed ? "Unfollow" : "Follow"}
-            {followed ? <Remove /> : <Add />}
-          </button>
+        <button className="rightbarFollowButton" onClick={handleClick}>
+        {followed ? "Unfollow" : "Follow"}
+        {followed ? <Remove /> : <Add />}
+      </button>
 
-          <button className="rightbarMessageButton" onClick={message}>Message
+          <button className="rightbarMessageButton" onClick={Message}>Message
           </button>
         </>
 
         )}
         <div className="userBio">
           <div className="followersDetail">
-            <h1 class="friendsCount">30</h1>
+            <h1 class="friendsCount">{friends.length}</h1>
             <button id = "friendsLink" className="rightbarTitle" onClick={displayFriends}>Friends</button>
           </div>
           <div className="followersDetail">
@@ -102,7 +130,7 @@ export default function Rightbar({ user }) {
             <button className="rightbarTitle">Communities</button>
           </div>
           <div className="followersDetail">
-            <h1 class="PostCount">10</h1>
+            <h1 class="PostCount">{posts.length}</h1>
             <button className="rightbarTitle">Post</button>
           </div>
 

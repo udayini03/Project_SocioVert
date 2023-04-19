@@ -52,8 +52,13 @@ export default function Profile() {
                 </svg>
               </div>
               <div><h4 className='profileInfoName'>{user.username}</h4></div>
+<<<<<<< HEAD
+              <div className='profileInfoDesc'>{user.desc}</div>
+              <div class = "friendSide"><Rightbar user={user} /></div>
+=======
               <div className='profileInfoDesc'>{user.desc}IIITian</div>
               <div class="friendSide"><Rightbar user={user} /></div>
+>>>>>>> 0f1ea4e37000d6e130ef9d18f8156cc2e6e0b4a4
             </div>
           </div>
           <div className='profileRightBottom'>

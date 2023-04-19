@@ -121,4 +121,31 @@ router.put("/:id/unfollow", async (req, res) => {
     }
   });
 
+  // PUT /users/:username
+// Update user profile
+router.put("/:username", async (req, res) => {
+  try {
+    const { username } = req.params;
+    const updatedUser = await User.findOneAndUpdate(
+      { username },
+      {
+        $set: {
+          username: req.body.username,
+          email: req.body.email,
+          desc: req.body.desc,
+          city: req.body.city,
+          from: req.body.from,
+        },
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 module.exports = router;
