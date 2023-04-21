@@ -23,6 +23,8 @@ export default function Messenger() {
   const { user } = useContext(AuthContext);
   const scrollRef = useRef();
 
+
+
   useEffect(() => {
     socket.current = io("ws://localhost:8900");
     socket.current.on("getMessage", data => {
@@ -101,11 +103,14 @@ export default function Messenger() {
     }
   }
 
+
   console.log(messages);
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behaviour: "smooth" })
   }, [messages])
+
+
 
   return (
     <>
@@ -141,7 +146,7 @@ export default function Messenger() {
                   <>
                   <div className="activeChatName">
                     <div className="activeChatImg"></div>
-                    <div className="activeChatUserName">Santhosh</div>
+                    <div className="activeChatUserName">{user._id}</div>
                   </div>
                     <div className="chatBoxTop">
                       {messages.map((m) => (

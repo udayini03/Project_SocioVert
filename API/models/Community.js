@@ -29,6 +29,14 @@ const communitySchema = new mongoose.Schema({
   owner: {
     type: String,
     required: true
+  },
+  profilePicture :{
+    type: String,
+    default: "",
+  },
+  coverPicture :{
+    type: String, 
+    default : "",
   }
 }, { timestamps: true });
 

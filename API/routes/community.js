@@ -1,139 +1,114 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../models/User');
-const Community = require('../models/Community');
+const Community = require("../models/Community");
+const User = require("../models/User");
 
 // Create a new community
-// POST /api/communities
-// Create a new community
-router.post('/communities', async (req, res) => {
+router.post("/createCommunity", async (req, res) => {
   try {
-    const { name, description, category } = req.body;
-
-    // Validate input
-    if (!name || !description || !category) {
-      return res.status(400).json({ error: 'Please provide name, description, and category' });
-    }
-
-    // Check if community with same name already exists
-    const existingCommunity = await Community.findOne({ name });
-    if (existingCommunity) {
-      return res.status(400).json({ error: 'Community with this name already exists' });
-    }
-
-    // Create a new community
-    const community = new Community({
-      name,
-      description,
-      category,
-      creator: req.user._id // Assumes user is authenticated and their ID is stored in req.user
-    });
-
-    await community.save();
-
-    res.status(201).json({ community });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
+  const newCommunity = new Community({
+    name: req.body.name,
+    description: req.body.description,
+    owner: req.body.owner,
+    tags : req.body.tags,
+    profilePicture : req.body.profilePicture,
+    coverPicture : req.body.coverPicture,
+  });
+  const savedCommunity = await newCommunity.save();
+    res.status(200).json(savedCommunity);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
 // Get all communities
-router.get('/communities', async (req, res) => {
+router.get('/api/communities', async (req, res) => {
   try {
     const communities = await Community.find();
-    res.send(communities);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
+    res.status(200).json(communities);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 });
 
-// Get a community by ID
-router.get('/communities/:id', async (req, res) => {
+// Get a specific community by ID
+router.get("/:communityid", async (req, res) => {
+  try {
+    const community = await Community.findById(req.params.id);
+    res.status(200).json(community);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Update a community
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedCommunity = await Community.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    );
+    res.status(200).json(updatedCommunity);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Delete a community
+router.delete("/:id", async (req, res) => {
   try {
     const community = await Community.findById(req.params.id);
     if (!community) {
-      return res.status(404).send('Community not found');
+      return res.status(404).json("Community not found");
     }
-    res.send(community);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
+
+    // Remove the community from all users who are members
+    const members = community.members;
+    for (let i = 0; i < members.length; i++) {
+      const member = await User.findById(members[i]);
+      member.communities = member.communities.filter(
+        (c) => c.toString() !== community._id.toString()
+      );
+      await member.save();
+    }
+
+    await community.delete();
+    res.status(200).json("Community deleted");
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-// Update a community by ID
-router.patch('/communities/:id', async (req, res) => {
+// Join a community
+router.put("/:id/join", async (req, res) => {
   try {
-    const community = await Community.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const community = await Community.findById(req.params.id);
     if (!community) {
-      return res.status(404).send('Community not found');
+      return res.status(404).json("Community not found");
     }
-    res.send(community);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
-  }
-});
 
-// Delete a community by ID
-router.delete('/communities/:id', async (req, res) => {
-  try {
-    const community = await Community.findByIdAndDelete(req.params.id);
-    if (!community) {
-      return res.status(404).send('Community not found');
-    }
-    res.send(community);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
-  }
-});
-
-// Join a community by ID
-router.post('/communities/:id/join', async (req, res) => {
-  try {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.body.userId);
     if (!user) {
-      return res.status(404).send('User not found');
+      return res.status(404).json("User not found");
     }
-    const community = await Community.findById(req.params.id);
-    if (!community) {
-      return res.status(404).send('Community not found');
+
+    if (community.members.includes(req.body.userId)) {
+      return res.status(400).json("You are already a member of this community");
     }
-    if (user.communities.includes(community._id)) {
-      return res.status(400).send('User is already a member of this community');
-    }
+
+    community.members.push(req.body.userId);
     user.communities.push(community._id);
+    await community.save();
     await user.save();
-    res.send(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
+
+    res.status(200).json("You have joined the community successfully");
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
-router.post('/communities/:id/leave', async (req, res) => {
-  try {
-    const user = await User.findById(req.user._id);
-    if (!user) {
-      return res.status(404).send('User not found');
-    }
-    const community = await Community.findById(req.params.id);
-    if (!community) {
-      return res.status(404).send('Community not found');
-    }
-    if (!user.communities.includes(community._id)) {
-      return res.status(400).send('User is not a member of this community');
-    }
-    user.communities = user.communities.filter(id => id !== community._id);
-    await user.save();
-    res.send(user);
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('Server error');
-  }
-});
 
 module.exports = router;

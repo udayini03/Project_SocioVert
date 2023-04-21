@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useParams } from 'react-router';
 import logo from './logo.png';
 import { Link } from "react-router-dom";
+import { storage} from '../../firebase';
 
 export default function Profile() {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;

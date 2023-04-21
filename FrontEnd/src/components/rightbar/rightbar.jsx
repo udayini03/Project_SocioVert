@@ -6,8 +6,7 @@ import axios from "axios";
 import { Link} from 'react-router-dom';
 import { AuthContext } from "../../context/AuthContext";
 import { Add, Remove } from "@mui/icons-material";
-// import { useNavigate } from 'react-router-dom';
-import { withRouter } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Rightbar({ user }) {
@@ -18,6 +17,9 @@ export default function Rightbar({ user }) {
     currentUser.followings.includes(user?.id)
   );
   const [posts, setPosts] = useState([]);
+  // const [postCount, setPostCount] = useState([]);
+  const id = user._id;
+  const navigate = useNavigate();
 
   // const [numFriends, setNumFriends] = useState(0);
 
@@ -29,7 +31,21 @@ export default function Rightbar({ user }) {
   //     console.log(err);
   //   } }
 
+  useEffect((id)=>{
+    const fetchPosts = async () => {
+      const id = user._id;
+      const res = currentUser ?
+       await axios.get(`/posts/profile/${currentUser}`)
+       : await axios.get(`posts/timeline/${id}`);
+      setPosts(res.data.sort((p1,p2)=>{
+        return new Date(p2.createdAt) - new Date(p1.createdAt);
+      }))
+  
+    }
+    fetchPosts(); 
+  },[currentUser, user._id, id]);
 
+  console.log(posts);
 
 
   useEffect(() => {
@@ -70,12 +86,13 @@ export default function Rightbar({ user }) {
       });
       const newConversation = res.data;
       // navigate to the chat page with the new conversation id
-      history.push(`/chat/${newConversation._id}`);
+      navigate(`/messenger/${newConversation._id}`);
     } catch (err) {
       console.log(err);
     }
   };
   
+  console.log(posts);
   
 
   const HomeRightbar = () => {
@@ -125,11 +142,11 @@ export default function Rightbar({ user }) {
             <button id = "friendsLink" className="rightbarTitle" onClick={displayFriends}>Friends</button>
           </div>
           <div className="followersDetail">
-            <h1 class="CommunitiesCount">12</h1>
+            <h1 class="CommunitiesCount">1</h1>
             <button className="rightbarTitle">Communities</button>
           </div>
           <div className="followersDetail">
-            <h1 class="PostCount">{posts.length}</h1>
+            <h1 class="PostCount">5</h1>
             <button className="rightbarTitle">Post</button>
           </div>
 
