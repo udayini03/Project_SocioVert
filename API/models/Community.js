@@ -27,7 +27,7 @@ const communitySchema = new mongoose.Schema({
     default: []
   },
   owner: {
-    type: String,
+    type: Array,
     required: true
   },
   profilePicture :{

@@ -50,7 +50,7 @@ export default function Share() {
             <label htmlFor="file" className="shareOption">
               <AttachmentIcon className="shareIcon" sx={{ color: "" }} />
               <span className="shareOptiontext"></span>
-              <input style={{ display: "none" }} type="file" id="file" accept=".png,.jpeg,.jpg,.webp" onChange={(e) => setFile(e.target.files[0])} />
+              <input style={{ display: "none" }} type="file" id="file" accept=".png,.jpeg,.jpg,.webp,.mp3,.mp4,.mov,.avi,.mkv" onChange={(e) => setFile(e.target.files[0])} />
             </label>
             <button className="shareButton" type="submit"> <SendIcon fontSize="small" sx={{ color: "" }} /> </button>
           </form>
