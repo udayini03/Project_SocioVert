@@ -1,0 +1,46 @@
+.conversation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 0px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 8px;
+    width: 90%;
+    color: black;
+    border-radius: 7px;
+    background: #000000;
+    border: white;
+}
+
+.conversation:hover {
+    /* background-color: rgb(30, 28, 28); */
+    box-shadow: 2px 6px 10px rgb(70, 70, 70);
+    text-shadow:  0px 2px 1px rgb(71, 89, 73);
+}
+
+.conversation::after {
+    background-color: rgb(232, 232, 232);
+    color: black;
+}
+
+.conversationImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgb(89, 103, 103);
+    object-fit: cover;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.conversationName {
+    font-weight: 500;
+    margin: 10px;
+    font-family: 'Brawler';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: white;
+}
