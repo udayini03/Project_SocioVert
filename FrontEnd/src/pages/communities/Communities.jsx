@@ -66,13 +66,14 @@ export default function Communities() {
   return (
     <div className="parent">
       <div className="communityContainer">
-      <div className='profileSideBar'>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <img src={logo} alt="logo" class="profilePageLogoImg"></img>
-      </Link>
-      <div className='profileSideBarWrapper'><Sidebar /></div>
-    </div>
-        <div className="main">
+        <div className='communityeSideBar'>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <img src={logo} alt="logo" class="communtiyPageLogoImg"></img>
+          </Link>
+          <div className='communitySideBarWrapper'><Sidebar /></div>
+
+        </div>
+        <div className="communitymain">
           {community ? (
             <>
               <div ><img className="coverImage" src={community.coverImage}></img></div>
@@ -90,11 +91,11 @@ export default function Communities() {
             </>
           ) : (
             <>
-            <div className='notFound'>No Communities found</div>
-            <div className="newCommunity">
-            <button className="JoinCommunity">Join Communities</button>
-            <button className="CreateCommunity">Create Community</button>
-            </div>
+              <div className='notFound'>No Communities found</div>
+              <div className="newCommunity">
+                <button className="JoinCommunity communityBtn">Join Communities</button>
+                <button className="CreateCommunity communityBtn">Create Community</button>
+              </div>
 
             </>
           )}
