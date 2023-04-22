@@ -1,19 +1,18 @@
 import Topbar from "../../components/topbar/topbar";
-import Sidebar from "../../components/sidebar/sidebar";
-import Rightbar from "../../components/rightbar/rightbar";
-import Feed from "../../components/feed/feed";
+import HomeSidebar from "../../components/sidebar/sidebar";
+import HomeFeed from "../../components/Home/homeFeed/homeFeed";
+import React, { useState } from 'react';
 import "./home.css";
 
 export default function Home() {
     return (
         <>
-        <Topbar/>
-        <div className="homeContainer">
-        <Sidebar/>
-        <Feed/>
-        <Rightbar/>
-        </div>
-    
+        
+            <Topbar />
+            <div className="homeSecContainer" >
+                <div className="homeSideBar"><HomeSidebar /></div>
+                <div class="homeFeed"><HomeFeed /></div>
+            </div>
         </>
 
     )

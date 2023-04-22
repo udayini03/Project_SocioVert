@@ -1,6 +1,7 @@
 import "./topbar.css";
-import { Person, Chat, Notifications } from '@mui/icons-material';
+import { WbSunny } from '@mui/icons-material';
 import { useContext } from "react";
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import logo from './logo.png';
@@ -22,10 +23,11 @@ export default function Topbar() {
 
             <div className="profileSide">
                 <div className="topbarIcons">
+
                     <div className="topbarIconItem">
-                        <Notifications />
-                        <span className="topbarIconBadge">1</span>
+                        <WbSunny />
                     </div>
+
                 </div>
                 {user && (
                     <Link to={`/profile/${user.username}`}>

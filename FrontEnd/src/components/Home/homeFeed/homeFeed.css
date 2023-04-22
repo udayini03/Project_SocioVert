@@ -1,0 +1,12 @@
+.homefeedWrapper{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.homeshareBox{
+    position: relative;
+    right: -190px;
+    width: 80%;
+}

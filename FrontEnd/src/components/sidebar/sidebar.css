@@ -1,26 +1,19 @@
 .sidebar {
-    width: 310px;
-    height: calc(100vh - 50px);
-    overflow-y: scroll;
-    position: sticky;
-    top: 50px;
-    /* background: #000000; */
-    /* background: red; */
-    transform: translateY(-60px);
-    border-top: 1px solid white;
+    width: 280px;
+    height: 100%;
+    position: fixed;
 }
 
 .sidebarWrapper {
-    transform: translateY(50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 20px;
+    height: 450px;
 }
 
 ::-webkit-scrollbar {
     width: 0.8px;
-}
-
-::-webkit-scrollbar-track {
-    background-color: white;
 }
 
 .sidebarList {
@@ -34,8 +27,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    color:white;
-    font-size:25px;
+    color: white;
+    font-size: 25px;
+    
 }
 
 .sidebarIcon {
@@ -44,5 +38,38 @@
 
 .link {
     text-decoration: none;
-    color:white;
+    color: white;
 }
+
+.logoutBtn {
+    border: none;
+    background: inherit;
+    color: white;
+    font-size: 25px;
+    transform: translateX(-5px);
+    cursor: pointer;
+}
+
+.hover-sidebarItems {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hover-sidebarItems::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(79, 233, 8, 0.35) 15.55%, rgba(3, 214, 242, 0.91) 99.99%);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-sidebarItems:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

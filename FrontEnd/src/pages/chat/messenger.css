@@ -1,103 +1,172 @@
-.messenger{
-    height: 88vh;
+.messenger {
+    height: 100%;
     width: 100%;
     display: flex;
     background-color: black;
     transform: translateY(10%);
     position: fixed;
-    
+}
+.chat{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: #040B13;
+}
+.chatlogoimg {
+    height: 60px;
+    width: 277.5px;
+    margin-top: 30px;
+    position: relative;
 }
 
-.Sidebar{
-    transform: translateY(10%);
-}
-/* calc(100vh - 70px) */
-.chatMenu{
-    width: 25%;
-    margin: 0;
-    border-left: white;
-    background-color: black;
+.vLine {
+    height: 40px;
+    width: 1px;
+    background: white;
 }
 
-.chatMenuInput{
+.chatHeading {
+    background: linear-gradient(180deg, #0FCDE7 37.5%, rgba(51, 225, 120, 0.821698) 54.17%, #5EE91D 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Brawler';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+
+}
+
+.communitiesHeading {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Brawler';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 33px;
+
+}
+
+.chatPageHeading {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.chatMenu {
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.chatMenuInput {
     width: 90%;
-    padding: 10px ;
+    padding: 10px;
     margin-top: 10px;
     border: none;
     border-bottom: 1px solid grey;
     border-radius: 5px;
 }
 
-.line{
+
+.chatBox {
+    width: 90%;
     height: 100%;
-    width: 0.75px;
-    background-color: white;
-    margin: 0;
 }
 
-.chatBox{
-    width: 40%;
-    background-color: black;
-    /* border-right: 2px white; */
-}
-
-.chatBoxWrapper{
+.chatBoxWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    background: black;
+    margin-left:4px ;
 }
 
-.chatBoxWrapper:focus{
+.chatMenuWrapper{
+    margin-left: 10px;
+}
+.activeChatName{
+    height: 75px;
+    width: 100%;
+    background:#00070e;
+    transform: translateX(-3px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+
+}
+
+.chatBoxWrapper:focus {
     outline: none;
 }
 
-.chatBoxTop{
+.activeChatImg{
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    background: white;
+    margin:0 10px;
+}
+
+.activeChatUserName{
+    font-family: 'Brawler';
+    font-style: normal;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+}
+
+.chatBoxTop {
     height: 100%;
     overflow-y: scroll;
-    padding-right: 10px;
 }
 
-.chatBoxBottom{
+.chatBoxBottom {
     display: flex;
     align-items: center;
-    justify-content: space-between ;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+    background:#00070e;
+    transform: translateX(-3px);
 }
 
-.chatMessageInput{
+.chatMessageInput {
     width: 80%;
-    height: 30%;
+    height: 20px;
     padding: 10px;
-    margin-bottom: 3%;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
-.chatSubmitButton{
-    width: 50px;
+.chatSubmitButton {
+    width: 80px;
     height: 40px;
     border: none;
-    border-radius: 100%;
+    font-size: 15px;
+    font-weight: 400;
+    border-radius:10px;
     cursor: pointer;
-    background-color: rgb(117, 207, 74);
+    background: linear-gradient(108deg, #0FCDE7 7.5%, rgba(51, 225, 120, 0.821698) 54.17%, #5EE91D 100%);
     color: black;
-    margin-bottom: 3%;
-    margin-right: 3%;
 }
 
-/* .chatOnline{
-    flex: 3;
-} */
-
-.chatMenuWrapper,.chatBoxWrapper,.chatOnlineWrapper{
-    padding: 10px;
+.chatBoxWrapper,
+.chatOnlineWrapper {
     height: 100%;
 }
 
-.noConversationText{
-    position: absolute;
-    top: 30%;
-    left: 90px;
+.noConversationText {
+    position: relative;
+    align-self: center;
+    top:300px;
     font-size: 25px;
     color: rgb(183, 183, 183);
     cursor: default;

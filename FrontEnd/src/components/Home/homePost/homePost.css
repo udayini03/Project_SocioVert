@@ -1,0 +1,131 @@
+.homepost {
+  width:90%;
+  height: auto;
+  min-width: 70%;
+  border-radius: 50px;
+  margin: 15px 0;
+  display: flex;
+}
+
+.homemainBox{
+  width:100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.homepostWrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* background: #010101; */
+  background: rgb(236, 231, 231);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 20px 0;
+}
+
+.homepostTop {
+  display: flex;
+  flex-direction: column;
+}
+
+.homepostTopLeft {
+  display: flex;
+  align-items: center;
+  translate:10px 20px;
+  margin-bottom:20px;
+}
+
+.homepostProfileImg {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+}
+
+.homepostUsername {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0 10px;
+  /* color: #D7DADC; */
+  color: black;
+}
+
+.homepostDate {
+  font-size: 12px;
+  position: absolute;
+  /* color: #D7DADC; */
+  color: black;
+  margin:12px;
+  translate: 46px -5px;
+}
+.homeuploadDeatils{
+  width: 100%;
+  height: 75%;
+  margin:20px 0;
+}
+
+.homepostCenter {
+  width: 100%;
+  overflow: hidden;
+  margin:10px 0;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.homepostText {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  /* color: #D7DADC; */
+  color:black;
+  margin:20px;
+  translate: 30px 0px;
+  width: 900px;
+}
+
+.homepostImg {
+  max-width: 80%;
+  max-height:100%;
+  align-self: center;
+  border-radius: 20px;
+}
+
+.homepostBottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  width:20%;
+  font-size: 15px;
+  transform: translateY(50px);
+}
+
+.homelikeIcon {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+.homepostBottomLeft{
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.homepostLikeCounter {
+  font-size: 20px;
+  color:black;
+
+}
+
+.homepostCommentText {
+  cursor: pointer;
+  font-size: 20px;
+  color:black;
+}
+

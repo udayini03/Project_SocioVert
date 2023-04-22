@@ -1,24 +1,25 @@
-.share{
-    width: 100%;
+.share {
+    width: 80%;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.43);
-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.43);
-background: #272323;
+    box-shadow: 3px 3px 10px rgba(75, 66, 66, 0.43);
+    background: #272323;
+    margin:20px;
 }
 
-.shareWrapper{
+.shareWrapper {
     padding: 10px;
     background: #1A1A1B;
-border: 1px solid rgba(255, 255, 255, 0.5);
-border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    align-self: center;
 }
 
-.shareTop{
+.shareTop {
     display: flex;
     align-items: center;
 }
 
-.shareProfileImg{
+.shareProfileImg {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -26,48 +27,56 @@ border-radius: 5px;
     margin-right: 10px;
 }
 
-.shareInput{
-    border-radius: 20px;
+.shareInput {
+    border-radius: 10px;
     width: 80%;
-    height: 30%;
+    border: none;
+    height: 30px;
     background: #272729;
+    color: white;
+    padding: 5px;
+}
+.shareInput::placeholder{
+    color: rgb(102, 188, 203);
 }
 
-.shareInput:focus{
-    outline: none;
+.shareInput:focus {
+    outline: white;
 }
 
 
-.shareBottom{
+.shareBottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.shareOptions{
+.shareOptions {
     display: flex;
     margin-left: 15px;
 }
 
-.shareOption{
+.shareOption {
     display: flex;
     align-items: center;
     margin-right: 15px;
     cursor: pointer;
+    margin-left: 20px;
 }
 
-.shareIcon{
+.shareIcon {
     font-size: 18px;
     margin-right: 3px;
+    color: rgb(126, 162, 163);
 }
 
-.shareOptionText{
+.shareOptionText {
     font-size: 14px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(239, 12, 12, 0.7);
 }
 
-.shareButton{
+.shareButton {
     border: none;
     padding: 7px;
     border-radius: 5px;
@@ -75,19 +84,20 @@ border-radius: 5px;
     margin-right: 20px;
     cursor: pointer;
     background: #1A1A1B;
+    color: rgb(15, 208, 215);
 }
 
-.shareImgContainer{
+.shareImgContainer {
     padding: 0 20px 10px 20px;
     position: relative;
 }
 
-.shareImg{
+.shareImg {
     width: 100%;
     object-fit: cover;
 }
 
-.shareCancelImg{
+.shareCancelImg {
     position: absolute;
     top: 0;
     right: 20px;
