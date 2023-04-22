@@ -62,7 +62,7 @@ export default function Post({ post }) {
                   {isliked ? (
                     <FavoriteIcon sx={{ color: "red" }} fontSize="medium" onClick={likeHandler} alt="" />
                   ) : (
-                    <FavoriteBorderIcon sx={{ color: "white" }} fontSize="medium" onClick={likeHandler} alt="" />
+                    <FavoriteBorderIcon sx={{ color: "black" }} fontSize="medium" onClick={likeHandler} alt="" />
                   )}
                 </div>
                 <span className="homepostLikeCounter"> {like} likes</span>

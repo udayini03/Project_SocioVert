@@ -12,6 +12,8 @@ const postRoute = require("./routes/posts");
 const ConversationRoute = require("./routes/coversations");
 const MessageRoute = require("./routes/messages");
 const path = require("path");
+const communityRoute = require("./routes/community");
+
 
 const multer = require("multer");
 
@@ -58,6 +60,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/conversations", ConversationRoute);
 app.use("/api/messages", MessageRoute);
+app.use("/api/community", communityRoute);
 
 app.listen(8800, ()=> {
     console.log("Server is Running!")

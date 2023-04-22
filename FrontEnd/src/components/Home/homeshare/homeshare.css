@@ -4,7 +4,8 @@
     box-shadow: 3px 3px 10px rgba(75, 66, 66, 0.43);
     background: #000000;
     margin:20px;
-    translate: -145px 20px ;
+    margin-bottom: 30px;
+    translate: -200px 10px ;
 }
 
 .homeshareWrapper {

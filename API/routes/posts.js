@@ -100,4 +100,14 @@ router.get("/profile/:username", async (req, res) => {
   }
 });
 
+router.get('/user/:username/postCount', async (req, res) => {
+  try {
+    const postCount = await Post.countDocuments({ user: req.params.userId });
+    res.json({ postCount });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;

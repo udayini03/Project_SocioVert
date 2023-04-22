@@ -53,10 +53,16 @@ export default function Post({ post }) {
           </div>
 
           <div className="uploadDeatils">
-            <div className="postCenter">
-              <div className="postText">{post?.desc}</div>
-              <img className="postImg" src={PF + post.img} alt=""></img>
-            </div>
+          <div className="postCenter">
+            <div className="postText">{post?.desc}</div>
+            {post.img.endsWith(".mp4") ? (
+              <video className="postVideo" controls>
+                <source src={PF + post.img} type="video/mp4" />
+              </video>
+            ) : (
+              <img className="postImg" src={PF + post.img} alt="" />
+            )}
+          </div>
             <div className="postBottom">
               <div className="postBottomLeft">
                 <div className = "likeIcon">

@@ -21,6 +21,8 @@ export default function Conversation({conversation, currentUser}) {
     getUser();
   }, [currentUser, conversation]);
 
+ 
+
   return (
     <div className="conversation">
       {user && <img className="conversationImg" src={user.profilePicture ? PF + user.profilePicture : PF+"Persons/noAvatar.png"}  alt="" />}
