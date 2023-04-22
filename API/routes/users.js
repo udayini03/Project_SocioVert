@@ -179,5 +179,20 @@ router.post('/login', async (req, res) => {
 });
 
 
+//search an user
+
+router.get('/search', async (req, res) => {
+  try {
+    const query = req.query.q;
+    const users = await User.find({
+      username: { $regex:  new RegExp(searchQuery, "i") }
+    });
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 module.exports = router;

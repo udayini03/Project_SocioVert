@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Messenger from "./pages/chat/messenger";
 import Communities from "./pages/communities/Communities";
+import Search from "./pages/search/search";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={user? <Home /> :<Register/>} />
         <Route path="/messenger" element={!user?< Navigate to ="/" /> :  <Messenger />} />
         <Route path="/communities" element={!user?< Navigate to ="/" /> :  <Communities />} />
+        <Route path="/search" element={!user?<Navigate to ="/"/> : <Search /> } />
       </Routes>
     </Router>
   );
