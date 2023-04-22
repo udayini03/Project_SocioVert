@@ -28,3 +28,14 @@
 .communityCoverImg{
     position: fixed;
 }
+
+.notFound{
+    color: white;
+    font-size: 30px;
+    padding: 20%;
+}
+
+.newCommunity{
+    display: flex;
+    align-items: column;
+}

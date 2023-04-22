@@ -1,6 +1,12 @@
 const User = require("../models/User");
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
+const bodyParser = require('body-parser');
+
+
+router.use(bodyParser.json());
+
+
 
 //update user
 router.put("/:id", async (req, res) => {
@@ -144,6 +150,32 @@ router.put("/:username", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  // Validate email and password
+  if (!email || !password) {
+    return res.status(400).json({ error: 'Email and password are required' });
+  }
+
+  // Find user by email
+  const user = await User.findOne({ email });
+  if (!user) {
+    return res.status(401).json({ error: 'Invalid email or password' });
+  }
+
+  // Compare password hash
+  const isValidPassword = await bcrypt.compare(password, user.password);
+  if (!isValidPassword) {
+    return res.status(401).json({ error: 'Invalid email or password' });
+  }
+
+  // Login successful
+  // Generate and return JWT token, redirect to dashboard, etc.
+  res.json({ message: 'Login successful' });
 });
 
 

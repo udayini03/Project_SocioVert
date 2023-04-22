@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 
+
 export default function Share() {
   const { user } = useContext(AuthContext);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -49,7 +50,7 @@ export default function Share() {
             <label htmlFor="file" className="shareOption">
               <AttachmentIcon className="shareIcon" sx={{ color: "" }} />
               <span className="shareOptiontext"></span>
-              <input style={{ display: "none" }} type="file" id="file" accept=".png,.jpeg,.jpg,.webp" onChange={(e) => setFile(e.target.files[0])} />
+              <input style={{ display: "none" }} type="file" id="file" accept=".png,.jpeg,.jpg,.webp,.mp3,.mp4,.mov,.avi,.mkv" onChange={(e) => setFile(e.target.files[0])} />
             </label>
             <button className="shareButton" type="submit"> <SendIcon fontSize="small" sx={{ color: "" }} /> </button>
           </form>
