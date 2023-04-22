@@ -11,12 +11,14 @@
     justify-content: center;
     padding: 20px;
     height: 450px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(1.5px);
-    -webkit-backdrop-filter: blur(8.5px);
+    /* background: rgba(255, 255, 255, 0.15); */
+    background: black;
+    /* backdrop-filter: blur(1.5px);
+    -webkit-backdrop-filter: blur(8.5px); */
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid white;
     margin: 10px;
+    z-index: 5;
 
 }
 

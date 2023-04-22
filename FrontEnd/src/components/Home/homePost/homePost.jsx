@@ -44,7 +44,7 @@ export default function Post({ post }) {
               <Link to={`/profile/${user.username}`}>
                 <img className="homepostProfileImg" src={user.profilePicture ? PF + user.profilePicture : PF + "Persons/noAvatar.png"} alt="" />
               </Link>
-              <span className="homepostUsername">{user.username}</span>
+              <span className="homepostUsername">{user.username} </span>
             </div>
             <div>
               <span className="homepostDate">{format(post.createdAt)}</span>

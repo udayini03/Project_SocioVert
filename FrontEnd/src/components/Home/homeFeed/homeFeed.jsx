@@ -1,9 +1,9 @@
-import Share from "../../share/share"
 import "./homeFeed.css";
 import Post from "../../Home/homePost/homePost";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../../../context/AuthContext";
+import HomeShare from "../homeshare/homeshare"
 
 export default function Feed({username}) {
   const [posts, setPosts] = useState([]);
@@ -26,7 +26,7 @@ export default function Feed({username}) {
   return (
     
       <div className="homefeedWrapper">
-    {(!username || username === user.username) && <div className="homeshareBox"><Share/></div>}
+    {(!username || username === user.username) && <div className="homeshareBox"><HomeShare/></div>}
    {posts.map(p=>(
        <Post key = {p._id} post={p}/>
 ))}
