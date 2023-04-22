@@ -145,8 +145,10 @@ export default function Messenger() {
                 currentChat ?
                   <>
                   <div className="activeChatName">
-                    <div className="activeChatImg"></div>
-                    <div className="activeChatUserName">{user._id}</div>
+                    <div className="activeChatImg">
+                    <img src={user.profilePicture}/>
+                    </div>
+                    <div className="activeChatUserName">{user.username}</div>
                   </div>
                     <div className="chatBoxTop">
                       {messages.map((m) => (
