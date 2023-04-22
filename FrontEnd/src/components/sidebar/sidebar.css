@@ -63,7 +63,8 @@
     height: 3px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(180deg, rgba(79, 233, 8, 0.35) 15.55%, rgba(3, 214, 242, 0.91) 99.99%);
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(79, 233, 8, 0.35) 15.55%, rgba(3, 214, 242, 0.91) 99.99%);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
