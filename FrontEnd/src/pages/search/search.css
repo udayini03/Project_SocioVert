@@ -1,0 +1,34 @@
+.main{
+    display: flex;
+    align-items: column;
+}
+.profileSideBar{
+    background: #000000;
+    position: fixed;
+    height: 800px;
+    width:306px;
+    border-right: 1px solid white;
+    left: 0%; 
+}
+
+.searchWrapper{
+    display: flex;
+    align-items: column;
+}
+ .searchbar{
+    padding: 2%;
+ }
+
+.shareInput {
+    border-radius: 10px;
+    top: 10%;
+    width: 500px;
+    border: none;
+    height: 30px;
+    background: #272729;
+    color: white;
+    padding: 5px;
+}
+.shareInput::placeholder{
+    color: rgb(102, 188, 203);
+}

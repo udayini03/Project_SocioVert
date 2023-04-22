@@ -4,6 +4,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Sidebar() {
   const { user } = useContext(AuthContext)
@@ -22,6 +23,13 @@ export default function Sidebar() {
               <Home className='sidebarIcon' />
               <span className='sidebarListItemtext hover-sidebarItems'>
                 Home </span>
+            </Link>
+          </li>
+          <li className='sidebarListItem'>
+            <Link to={{ pathname: '/search' }} className='link'>
+              <SearchIcon className='sidebarIcon' />
+              <span className='sidebarListItemtext hover-sidebarItems'>
+                Search</span>
             </Link>
           </li>
           <li className='sidebarListItem'>
