@@ -1,4 +1,4 @@
-import "./message.css"
+import "./CommunityMessage.css"
 import { format } from "timeago.js";
 // import Sidebar from "../sidebar/sidebar";
 export default function Message({ message, own }) {

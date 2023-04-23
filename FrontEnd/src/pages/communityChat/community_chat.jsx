@@ -1,6 +1,6 @@
 import Topbar from "../../components/topbar/topbar";
 import "./community_chat.css";
-import Conversation from "../../components/conversations/communityConversation";
+import Conversation from "../../components/communityConversations/communityConversation";
 import Message from "../../components/CommunityMessage/CommunityMessage";
 import ChatOnline from "../../components/chatOnline/ChatOnline";
 import { useContext, useEffect, useRef, useState } from "react";
