@@ -1,6 +1,7 @@
 import './profile.css'
 import Sidebar from "../../components/sidebar/sidebar";
 import Rightbar from "../../components/rightbar/rightbar";
+import Topbar from '../../components/topbar/topbar';
 import ProfileFeed from "../../components/profile/profileFeed/profileFeed";
 import axios from "axios";
 import { useEffect, useState } from "react";
