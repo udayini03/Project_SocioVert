@@ -12,6 +12,8 @@
     height: 450px;
 }
 
+
+
 ::-webkit-scrollbar {
     width: 0.8px;
 }
@@ -72,4 +74,9 @@
   .hover-sidebarItems:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+
+  .dark-mode{
+    background-color: white;
+    color: black;
   }
