@@ -10,7 +10,7 @@
     color: black;
     border-radius: 7px;
     background: #000000;
-    border: white;
+    background-color: black;
 }
 
 .conversation:hover {

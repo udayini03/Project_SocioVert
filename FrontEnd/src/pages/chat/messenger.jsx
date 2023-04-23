@@ -1,4 +1,3 @@
-import Topbar from "../../components/topbar/topbar";
 import "./messenger.css";
 import Conversation from "../../components/conversations/conversation";
 import Message from "../../components/message/Message";

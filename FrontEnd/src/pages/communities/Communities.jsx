@@ -14,6 +14,16 @@ export default function Communities() {
   const [loading, setLoading] = useState(false);
   const [joined, setJoined] = useState(false);
   const [user, setUser] = useState(null);
+  const communityName = useParams().communityName
+
+
+  useEffect(() => {
+    const fetchCommunity = async () => {
+      const res = await axios.get(`/communities?name=${communityName}`);
+      setCommunity(res.data);
+    };
+    fetchCommunity();
+  }, [communityName]);
 
   useEffect(() => {
     const fetchData = async () => {

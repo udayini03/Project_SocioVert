@@ -8,6 +8,7 @@ import { AuthContext } from "./context/AuthContext";
 import Messenger from "./pages/chat/messenger";
 import Communities from "./pages/communities/Communities";
 import Search from "./pages/search/search";
+import Connect from "./pages/connect/connect";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/messenger" element={!user?< Navigate to ="/" /> :  <Messenger />} />
         <Route path="/communities" element={!user?< Navigate to ="/" /> :  <Communities />} />
         <Route path="/search" element={!user?<Navigate to ="/"/> : <Search /> } />
+        <Route path="/connect" element={!user?<Navigate to ="/"/> : <Connect/>}/>
       </Routes>
     </Router>
   );

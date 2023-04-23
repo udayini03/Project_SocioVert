@@ -1,10 +1,12 @@
 import './sidebar.css';
-import { Home, Chat, Group, AccountCircleRounded, Settings } from "@mui/icons-material";
+import { Home, Chat, Group, AccountCircleRounded } from "@mui/icons-material";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useContext } from 'react';
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
+import HubIcon from '@mui/icons-material/Hub';
+
 
 export default function Sidebar() {
   const { user } = useContext(AuthContext)
@@ -52,12 +54,14 @@ export default function Sidebar() {
               <span className='sidebarListItemtext hover-sidebarItems'>
                 Profile </span>
             </li>
-          </Link>
+            </Link>
+          <Link to={{ pathname: `/connect`}} className='link'>
           <li className='sidebarListItem'>
-            <Settings className='sidebarIcon' />
+            <HubIcon className='sidebarIcon' />
             <span className='sidebarListItemtext hover-sidebarItems'>
-              Settings </span>
+              Connect </span>
           </li>
+          </Link>
           <li className='sidebarListItem'>
             <LogoutIcon className='sidebarIcon' />
             <button onClick={handleLogout} className='logoutBtn hover-sidebarItems'>

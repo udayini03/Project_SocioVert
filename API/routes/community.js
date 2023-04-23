@@ -22,8 +22,23 @@ router.post("/createCommunity", async (req, res) => {
   }
 });
 
+//fetch the community
+
+router.get('/user/:userId', async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const communities = await Community.find({ members: userId });
+    res.json(communities);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
 // Get all communities
-router.get('/api/communities', async (req, res) => {
+router.get('/communities', async (req, res) => {
   try {
     const communities = await Community.find();
     res.status(200).json(communities);
