@@ -1,11 +1,11 @@
 # SocioVert
 ### TEAM 
  <br />
-Krishna Jaiswal 21bcs056 <br />
-Udayini Vedantham 21bcs130 <br />
-Santhosh Naik 21bcs036 <br />
-Nancy Yadav 21bcs071 <br />
 
+Santhosh Naik 21bcs036 <br />
+Udayini Vedantham 21bcs130 <br />
+Nancy Yadav 21bcs071 <br />
+Krishna Jaiswal 21bcs056 <br />
 <br/>
 
 
